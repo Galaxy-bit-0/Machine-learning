@@ -58,6 +58,42 @@ python logistic_regression.py
 - This project is for learning purposes — `sklearn.linear_model.LogisticRegression`
   would be the standard choice for real-world use. #this is the standard model .fit() 
 
+
+# K-Nearest Neighbours from Scratch
+
+A KNN classifier built from scratch in Python to classify breast tumors as Benign (B) or Malignant (M) using the Wisconsin Breast Cancer dataset.
+
+## Code
+- Loads `data.csv` and drops the `id` and `diagnosis` columns to get the features
+- Splits the data 80% train / 20% test (`random_state=42`)
+- Plots the training data (radius mean vs. texture mean)
+- Implements Euclidean distance and a `KNN` class (`fit`, `predict`, `predict_class`)
+- Classifies each test point by majority vote of its 7 nearest neighbours
+- Prints test accuracy
+- Plots the predicted test classes
+
+## Working process
+
+1. Compute the Euclidean distance from the new point to every training point
+2. Pick the `k = 7` closest points
+3. Assign the most common label among them
+
+```
+d(a, b) = √( Σ (bᵢ − aᵢ)² )
+```
+
+## Requirements
+
+```bash
+pip install numpy pandas matplotlib scikit-learn
+```
+
+## Run
+
+```bash
+python K-NearestNeighbours.py
+```
+
+Put `data.csv` in the same folder.
 ## Author
-Balagani Shanmukh — built as a hands-on ML algorithm to understand logistic regression
-and gradient descent at the implementation level.
+Balagani Shanmukh 
